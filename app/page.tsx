@@ -426,7 +426,7 @@ and broadcasting a weekly deep house radio show <br />on Ibiza Live Radio (103.7
   </svg>
 </a>
             <a
-  href="https://www.youtube.com/@ibizaislandersessions1462"
+  href="https://www.facebook.com/Ibizaislander"
   target="_blank"
   rel="noopener noreferrer"
   aria-label="Facebook"
