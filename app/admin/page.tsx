@@ -114,11 +114,13 @@ export default function Admin() {
       setQuantity(p.quantity || 0)
     } else {
       setQuantity(
-        Math.floor(
-          (p.quantity || 0) /
-            (p.sizes?.length || 1)
-        )
-      )
+  String(
+    Math.floor(
+      (p.quantity || 0) /
+        (p.sizes?.length || 1)
+    )
+  )
+)
     }
 
     setType(p.type || "")
