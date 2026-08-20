@@ -1,12 +1,12 @@
-let audio = null
-let listeners = []
+let audio: HTMLAudioElement | null = null
+let listeners: (() => void)[] = []
 
 const notify = () => {
   listeners.forEach((listener) => listener())
 }
 
 export const AudioPlayer = {
-  play: (url) => {
+  play: (url: string) => {
     if (!audio) {
       audio = new Audio(url)
       audio.preload = "auto"
@@ -46,14 +46,14 @@ export const AudioPlayer = {
     return audio?.duration || 0
   },
 
-  seek: (time) => {
+  seek: (time: number) => {
     if (audio) {
       audio.currentTime = time
       notify()
     }
   },
 
-  subscribe: (listener) => {
+  subscribe: (listener: () => void) => {
     listeners.push(listener)
 
     return () => {
