@@ -8,7 +8,7 @@ import { supabase } from "@/lib/supabase"
 export default function Radio() {
   
 
-
+const [menuOpen, setMenuOpen] = useState(false);
   const [tracks, setTracks] = useState<any[]>([])
   const [currentSession, setCurrentSession] = useState(275)
 const [isPlaying, setIsPlaying] = useState(false)
@@ -131,16 +131,61 @@ const formatTime = (seconds: number) => {
             <Link href="/dj" className="transition-opacity hover:opacity-50">DJ SPACE</Link>
           </nav>
 
-          <button
-            type="button"
-            aria-label="Open menu"
-            className="flex h-10 w-10 flex-col items-center justify-center gap-1.5 md:hidden"
-          >
-            <span className="h-px w-5 bg-neutral-900" />
-            <span className="h-px w-5 bg-neutral-900" />
-            <span className="h-px w-5 bg-neutral-900" />
-          </button>
+         <button
+  type="button"
+  aria-label={menuOpen ? "Close menu" : "Open menu"}
+  onClick={() => setMenuOpen(!menuOpen)}
+  className="relative z-[60] flex h-10 w-10 flex-col items-center justify-center gap-1.5 md:hidden"
+>
+  <span
+    className={`h-px w-5 bg-neutral-900 transition-transform duration-200 ${
+      menuOpen ? "translate-y-[4px] rotate-45" : ""
+    }`}
+  />
+  <span
+    className={`h-px w-5 bg-neutral-900 transition-opacity duration-200 ${
+      menuOpen ? "opacity-0" : ""
+    }`}
+  />
+  <span
+    className={`h-px w-5 bg-neutral-900 transition-transform duration-200 ${
+      menuOpen ? "-translate-y-[4px] -rotate-45" : ""
+    }`}
+  />
+</button>
         </div>
+                  
+
+        {/* MOBILE MENU */}
+        {menuOpen && (
+          <nav className="border-t border-neutral-200 bg-white px-6 py-6 md:hidden">
+            <div className="flex flex-col gap-6 text-[11px] tracking-[0.2em]">
+              <Link
+                href="/radio"
+                onClick={() => setMenuOpen(false)}
+                className="transition-opacity hover:opacity-50"
+              >
+                RADIO SHOWS
+              </Link>
+              <Link
+      href="/"
+      onClick={() => setMenuOpen(false)}
+      className="transition-opacity hover:opacity-50"
+    >
+      
+    </Link>
+
+              <Link
+                href="/dj"
+                onClick={() => setMenuOpen(false)}
+                className="transition-opacity hover:opacity-50"
+              >
+                DJ SPACE
+              </Link>
+            </div>
+          </nav>
+        )}
+      
       </header>
 
       {/* RADIO HERO */}
