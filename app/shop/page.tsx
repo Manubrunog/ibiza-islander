@@ -1263,6 +1263,21 @@ export default function Shop() {
               </svg>
 
             </a>
+            <a
+  href="https://www.facebook.com/Ibizaislander"
+  target="_blank"
+  rel="noopener noreferrer"
+  aria-label="Facebook"
+  className="transition-opacity hover:opacity-50"
+>
+  <svg
+    viewBox="0 0 24 24"
+    className="h-4 w-4"
+    fill="currentColor"
+  >
+    <path d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073c0 6.019 4.388 11.02 10.125 11.92v-8.432H7.078v-3.488h3.047V9.413c0-3.022 1.792-4.692 4.533-4.692 1.312 0 2.686.236 2.686.236v2.973h-1.514c-1.491 0-1.955.929-1.955 1.882v2.258h3.328l-.532 3.488h-2.796v8.432C19.612 23.093 24 18.092 24 12.073Z" />
+  </svg>
+</a>
 
 
             {/* YOUTUBE */}

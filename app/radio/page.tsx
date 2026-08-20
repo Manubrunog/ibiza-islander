@@ -401,7 +401,7 @@ const formatTime = (seconds: number) => {
   </svg>
 </a>
             <a
-  href="https://www.youtube.com/@ibizaislandersessions1462"
+  href="https://www.facebook.com/Ibizaislander"
   target="_blank"
   rel="noopener noreferrer"
   aria-label="Facebook"
