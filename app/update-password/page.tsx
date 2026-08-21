@@ -2,44 +2,55 @@
 
 import { useState } from "react"
 import { supabase } from "@/lib/supabase"
+import { useRouter } from "next/navigation"
 import Link from "next/link"
 
-export default function ResetPassword() {
-  const [email, setEmail] = useState("")
-  const [message, setMessage] = useState("")
+export default function UpdatePassword() {
+  const router = useRouter()
+
+  const [password, setPassword] = useState("")
+  const [confirmPassword, setConfirmPassword] = useState("")
   const [error, setError] = useState("")
+  const [message, setMessage] = useState("")
   const [loading, setLoading] = useState(false)
 
-  async function handleReset() {
+  async function handleUpdatePassword() {
     setError("")
     setMessage("")
 
-    if (!email) {
-      setError("Please enter your email address.")
+    if (!password || !confirmPassword) {
+      setError("Please enter your new password.")
+      return
+    }
+
+    if (password.length < 6) {
+      setError("Password must contain at least 6 characters.")
+      return
+    }
+
+    if (password !== confirmPassword) {
+      setError("Passwords do not match.")
       return
     }
 
     setLoading(true)
 
-    const { error } = await supabase.auth.resetPasswordForEmail(email, {
-      redirectTo: `${window.location.origin}/update-password`,
+    const { error } = await supabase.auth.updateUser({
+      password,
     })
 
     setLoading(false)
 
     if (error) {
       setError(error.message)
-    } else {
-      setMessage(
-        "Check your email and may be your Spam. We have sent you a password reset link."
-      )
+      return
     }
-  }
 
-  function handleKeyDown(e: React.KeyboardEvent<HTMLInputElement>) {
-    if (e.key === "Enter") {
-      handleReset()
-    }
+    setMessage("Your password has been updated successfully.")
+
+    setTimeout(() => {
+      router.push("/login")
+    }, 2000)
   }
 
   return (
@@ -82,6 +93,7 @@ export default function ResetPassword() {
 
           </Link>
 
+
           {/* PETIT LOGO CENTRÉ */}
 
           <Link
@@ -94,6 +106,7 @@ export default function ResetPassword() {
               className="h-auto w-[75px] md:w-[90px]"
             />
           </Link>
+
 
           <nav className="hidden items-center gap-12 text-[11px] tracking-[0.2em] md:flex">
 
@@ -113,22 +126,12 @@ export default function ResetPassword() {
 
           </nav>
 
-          <button
-            type="button"
-            aria-label="Open menu"
-            className="flex h-10 w-10 flex-col items-center justify-center gap-1.5 md:hidden"
-          >
-            <span className="h-px w-5 bg-neutral-900" />
-            <span className="h-px w-5 bg-neutral-900" />
-            <span className="h-px w-5 bg-neutral-900" />
-          </button>
-
         </div>
 
       </header>
 
 
-      {/* RESET PASSWORD */}
+      {/* UPDATE PASSWORD */}
 
       <section className="px-6 pb-28 pt-[150px] md:px-10">
 
@@ -143,11 +146,11 @@ export default function ResetPassword() {
               </p>
 
               <h1 className="text-[32px] font-light tracking-[0.15em] md:text-[40px]">
-                RESET PASSWORD
+                NEW PASSWORD
               </h1>
 
               <p className="mx-auto mt-5 max-w-[430px] text-[11px] leading-7 text-neutral-500">
-                Enter your email address and we will send you a link to reset your password.
+                Enter your new password below.
               </p>
 
             </div>
@@ -155,22 +158,43 @@ export default function ResetPassword() {
 
             <div className="mx-auto max-w-[460px] space-y-8">
 
+              {/* PASSWORD */}
+
               <div>
 
                 <label className="mb-2 block text-[9px] tracking-[0.3em] text-neutral-400">
-                  EMAIL
+                  NEW PASSWORD
                 </label>
 
                 <input
-                  type="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  onKeyDown={handleKeyDown}
+                  type="password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
                   className="w-full border-b border-neutral-300 bg-transparent py-3 text-[13px] outline-none transition-colors focus:border-neutral-900"
                 />
 
               </div>
 
+
+              {/* CONFIRM */}
+
+              <div>
+
+                <label className="mb-2 block text-[9px] tracking-[0.3em] text-neutral-400">
+                  CONFIRM PASSWORD
+                </label>
+
+                <input
+                  type="password"
+                  value={confirmPassword}
+                  onChange={(e) => setConfirmPassword(e.target.value)}
+                  className="w-full border-b border-neutral-300 bg-transparent py-3 text-[13px] outline-none transition-colors focus:border-neutral-900"
+                />
+
+              </div>
+
+
+              {/* ERROR */}
 
               {error && (
                 <p className="pt-1 text-center text-[10px] tracking-[0.05em] text-red-500">
@@ -179,6 +203,8 @@ export default function ResetPassword() {
               )}
 
 
+              {/* SUCCESS */}
+
               {message && (
                 <p className="pt-1 text-center text-[10px] leading-6 tracking-[0.05em] text-neutral-500">
                   {message}
@@ -186,19 +212,23 @@ export default function ResetPassword() {
               )}
 
 
+              {/* BUTTON */}
+
               <div className="pt-5 text-center">
 
                 <button
                   type="button"
-                  onClick={handleReset}
+                  onClick={handleUpdatePassword}
                   disabled={loading}
                   className="border border-neutral-900 px-10 py-4 text-[9px] tracking-[0.3em] transition-all hover:bg-neutral-900 hover:text-white disabled:opacity-40"
                 >
-                  {loading ? "SENDING..." : "SEND RESET LINK"}
+                  {loading ? "UPDATING..." : "UPDATE PASSWORD"}
                 </button>
 
               </div>
 
+
+              {/* BACK */}
 
               <div className="pt-6 text-center">
 
@@ -256,13 +286,6 @@ export default function ResetPassword() {
             </div>
 
           </Link>
-
-          <nav className="flex flex-wrap gap-x-8 gap-y-3 text-[9px] tracking-[0.18em] text-neutral-600">
-            <Link href="/privacy">LEGAL & PRIVACY</Link>
-            <Link href="mailto:hola@ibizaislander.com">
-              CONTACT
-            </Link>
-          </nav>
 
         </div>
 
