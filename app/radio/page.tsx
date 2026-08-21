@@ -225,12 +225,18 @@ const formatTime = (seconds: number) => {
           aria-label={isPlaying ? "Pause" : "Play"}
           className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-neutral-900 text-white transition-opacity hover:opacity-70"
         >
-          {isPlaying ? (
-            <span className="flex gap-1">
-              <span className="h-4 w-[2px] bg-white" />
-              <span className="h-4 w-[2px] bg-white" />
-            </span>
-          ) : (
+          {isPlaying && currentSession === number ? (
+  <svg
+    width="16"
+    height="16"
+    viewBox="0 0 16 16"
+    fill="none"
+    aria-hidden="true"
+  >
+    <rect x="3" y="2" width="3" height="12" rx="0.5" fill="currentColor" />
+    <rect x="10" y="2" width="3" height="12" rx="0.5" fill="currentColor" />
+  </svg>
+) : (
             <span className="ml-1 text-[18px]">▶</span>
           )}
         </button>
