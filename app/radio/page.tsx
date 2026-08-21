@@ -225,20 +225,14 @@ const formatTime = (seconds: number) => {
           aria-label={isPlaying ? "Pause" : "Play"}
           className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-neutral-900 text-white transition-opacity hover:opacity-70"
         >
-          {isPlaying && currentSession === number ? (
-  <svg
-    width="16"
-    height="16"
-    viewBox="0 0 16 16"
-    fill="none"
-    aria-hidden="true"
-  >
-    <rect x="3" y="2" width="3" height="12" rx="0.5" fill="currentColor" />
-    <rect x="10" y="2" width="3" height="12" rx="0.5" fill="currentColor" />
-  </svg>
+          {isPlaying ? (
+  <span className="flex gap-1">
+    <span className="h-4 w-[2px] bg-white" />
+    <span className="h-4 w-[2px] bg-white" />
+  </span>
 ) : (
-            <span className="ml-1 text-[18px]">▶</span>
-          )}
+  <span className="ml-1 text-[18px]">▶</span>
+)}
         </button>
 
 
@@ -336,26 +330,12 @@ const formatTime = (seconds: number) => {
             </span>
 
            {isPlaying ? (
-  <svg
-    width="16"
-    height="16"
-    viewBox="0 0 16 16"
-    fill="none"
-    aria-hidden="true"
-  >
-    <rect x="3" y="2" width="3" height="12" rx="0.5" fill="currentColor" />
-    <rect x="10" y="2" width="3" height="12" rx="0.5" fill="currentColor" />
-  </svg>
+  <span className="flex gap-1">
+    <span className="h-4 w-[2px] bg-white" />
+    <span className="h-4 w-[2px] bg-white" />
+  </span>
 ) : (
-  <svg
-    width="16"
-    height="16"
-    viewBox="0 0 16 16"
-    fill="currentColor"
-    aria-hidden="true"
-  >
-    <path d="M4 2.5C4 1.72 4.86 1.24 5.52 1.65L13.05 6.35C13.67 6.74 13.67 7.64 13.05 8.03L5.52 12.73C4.86 13.14 4 12.66 4 11.88V2.5Z" />
-  </svg>
+  <span className="ml-1 text-[18px]">▶</span>
 )}
 
           </button>
