@@ -46,7 +46,7 @@ const [duration, setDuration] = useState(0)
   return unsubscribe
 }, [])
 
-  const sessions = Array.from({ length: 8 }, (_, i) => 276 - i)
+  const sessions = Array.from({ length: 9 }, (_, i) => 276 - i)
 
 const playSession = (number: number) => {
   const url = `/audio/Ibiza Islander Sessions by Manu ${number}.mp3`
