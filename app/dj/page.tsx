@@ -253,9 +253,13 @@ const logout = async () => {
               </h1>
 
               <p className="mx-auto mt-6 max-w-[430px] text-[11px] leading-7 text-neutral-500">
-                Submit your music to Ibiza Islander.
+                Sign in or create an account, send your link
                 <br />
-                Sign in or create an account to send your track.
+                Submit your new release to Ibiza Islander
+                  <br />
+                Be approuved, get playlisted in our next session
+                  <br />
+                Give your release a chance
               </p>
 
 
@@ -303,9 +307,9 @@ const logout = async () => {
                   Share your music and spread the world.
                   <br />
                   
-                  Send us your new track and be part of the next sessions
+                  Send us your link and be part of the next sessions
                   <br />
-                  We listen to every submission  <br />
+                  We listen to every submission carefully  <br />
                   Deep / Afro / House / Balearic
                 </p>
 

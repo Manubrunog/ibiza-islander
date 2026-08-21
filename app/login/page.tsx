@@ -177,6 +177,18 @@ export default function Login() {
           </button>
 
         </div>
+        {/* FORGOT PASSWORD */}
+
+<div className="pt-2 text-center">
+
+  <Link
+    href="/reset-password"
+    className="text-[9px] tracking-[0.25em] text-neutral-400 transition-colors hover:text-neutral-900"
+  >
+    FORGOT PASSWORD?
+  </Link>
+
+</div>
 
 
         {/* CREATE ACCOUNT */}
