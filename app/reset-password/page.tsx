@@ -22,7 +22,7 @@ export default function ResetPassword() {
     setLoading(true)
 
     const { error } = await supabase.auth.resetPasswordForEmail(email, {
-      redirectTo: `${window.location.origin}/update-password`,
+      redirectTo: `${window.location.origin}/reset-password`,
     })
 
     setLoading(false)
@@ -31,7 +31,7 @@ export default function ResetPassword() {
       setError(error.message)
     } else {
       setMessage(
-        "Check your email and may be your Spam. We have sent you a password reset link."
+        "Check your email or may be your Spam box. We have sent you a password reset link."
       )
     }
   }
