@@ -187,7 +187,8 @@ export default function Home() {
             </p>
 
             {/* Real audio player: replace the src with your file/stream */}
-            <div className="mt-10 w-full max-w-2xl border border-white/50 bg-black/20 p-4 backdrop-blur-md md:p-5">
+
+            <div className="mt-10 w-full max-w-2xl border border-white/50 bg-black/20 p-3 backdrop-blur-md md:p-4">
               <div className="flex items-center gap-4 md:gap-6">
                 <button
                   type="button"
@@ -197,13 +198,32 @@ export default function Home() {
   if (isPlaying) {
     AudioPlayer.pause();
   } else {
-    AudioPlayer.play("/audio/Ibiza Islander Sessions 275 By Manu.mp3");
+    AudioPlayer.play("/audio/Ibiza Islander Sessions by Manu 276.mp3");
   }
 }}
                 >
-                  <span className="ml-1 text-lg">
-  {isPlaying ? "Ⅱ" : "▶"}
-</span>
+                  {isPlaying ? (
+  <svg
+    width="16"
+    height="16"
+    viewBox="0 0 16 16"
+    fill="none"
+    aria-hidden="true"
+  >
+    <rect x="3" y="2" width="3" height="12" rx="0.5" fill="currentColor" />
+    <rect x="10" y="2" width="3" height="12" rx="0.5" fill="currentColor" />
+  </svg>
+) : (
+  <svg
+    width="16"
+    height="16"
+    viewBox="0 0 16 16"
+    fill="currentColor"
+    aria-hidden="true"
+  >
+    <path d="M4 2.5C4 1.72 4.86 1.24 5.52 1.65L13.05 6.35C13.67 6.74 13.67 7.64 13.05 8.03L5.52 12.73C4.86 13.14 4 12.66 4 11.88V2.5Z" />
+  </svg>
+)}
                 </button>
 
                 <div className="min-w-0 flex-1 text-left">
@@ -231,7 +251,7 @@ export default function Home() {
 </span>
               </div>
               {/* PROGRESS BAR */}
-<div className="mt-5">
+<div className="mt-3">
   <input
     type="range"
     min="0"
