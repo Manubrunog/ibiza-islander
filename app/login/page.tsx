@@ -111,7 +111,9 @@ export default function Login() {
         </h1>
 
         <p className="mx-auto mt-5 max-w-[430px] text-[11px] leading-7 text-neutral-500">
-          Sign in to submit your music to Ibiza Islander.
+          Sign in to Ibiza Islander <br />
+Submit your music and follow your submissions<br />
+Approved tracks are featured in our music feed below the Radio Shows<br />
         </p>
 
       </div>

@@ -253,13 +253,13 @@ const logout = async () => {
               </h1>
 
               <p className="mx-auto mt-6 max-w-[430px] text-[11px] leading-7 text-neutral-500">
-                Sign in or create an account, send your link
+                Sign in or create an account, then send us your link
                 <br />
-                Submit your new release to Ibiza Islander
+                Submit your latest release to Ibiza Islander
                   <br />
-                Be approuved, get playlisted in our next session
+                Get approved and featured in our next session
                   <br />
-                Give your release a chance
+                Give your music a chance
               </p>
 
 
