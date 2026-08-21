@@ -329,28 +329,14 @@ const formatTime = (seconds: number) => {
               Ibiza Islander Sessions by Manu
             </span>
 
-{isPlaying ? (
-  <svg
-    width="16"
-    height="16"
-    viewBox="0 0 16 16"
-    fill="none"
-    aria-hidden="true"
-  >
-    <rect x="3" y="2" width="3" height="12" rx="0.5" fill="currentColor" />
-    <rect x="10" y="2" width="3" height="12" rx="0.5" fill="currentColor" />
-  </svg>
-) : (
-  <svg
-    width="16"
-    height="16"
-    viewBox="0 0 16 16"
-    fill="currentColor"
-    aria-hidden="true"
-  >
-    <path d="M4 2.5C4 1.72 4.86 1.24 5.52 1.65L13.05 6.35C13.67 6.74 13.67 7.64 13.05 8.03L5.52 12.73C4.86 13.14 4 12.66 4 11.88V2.5Z" />
-  </svg>
-)}
+ 
+<span className="ml-4 text-[10px] opacity-40 transition-opacity group-hover\:opacity-100">
+          {currentSession === number && isPlaying ? "❚❚" : "▶"}
+        </span>
+
+
+
+
           </button>
         ))}
 
