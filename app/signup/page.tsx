@@ -112,7 +112,7 @@ export default function SignUp() {
         </h1>
 
         <p className="mx-auto mt-5 max-w-[430px] text-[11px] leading-7 text-neutral-500">
-          Join Ibiza Islander — submit your tracks
+          Join us — submit your tracks — give your music a chance
 
         </p>
 

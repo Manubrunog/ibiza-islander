@@ -147,7 +147,7 @@ export default function ResetPassword() {
               </h1>
 
               <p className="mx-auto mt-5 max-w-[430px] text-[11px] leading-7 text-neutral-500">
-                Enter your email address and we will send you a link to reset your password.
+                Enter your email address and we’ll send you a password reset link.
               </p>
 
             </div>

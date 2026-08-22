@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Ibiza Islander",
-  description: "Radio & music platform",
+  description: "lifestyle & music platform",
 };
 
 export default function RootLayout({
