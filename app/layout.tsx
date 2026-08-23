@@ -30,6 +30,22 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col">
         {children}
+
+<Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-LPM4SSZ2SW"
+          strategy="afterInteractive"
+        />
+
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){window.dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-LPM4SSZ2SW');
+          `}
+        </Script>
+        
+
       </body>
     </html>
   );
