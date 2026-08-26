@@ -10,7 +10,7 @@ export default function Radio() {
 
 const [menuOpen, setMenuOpen] = useState(false);
   const [tracks, setTracks] = useState<any[]>([])
-  const [currentSession, setCurrentSession] = useState(276)
+  const [currentSession, setCurrentSession] = useState(278)
 const [isPlaying, setIsPlaying] = useState(false)
 const [currentTime, setCurrentTime] = useState(0)
 const [duration, setDuration] = useState(0)
@@ -46,7 +46,7 @@ const [duration, setDuration] = useState(0)
   return unsubscribe
 }, [])
 
-  const sessions = Array.from({ length: 9 }, (_, i) => 276 - i)
+  const sessions = Array.from({ length: 9 }, (_, i) => 278 - i)
 
 const playSession = (number: number) => {
   const url = `/audio/Ibiza Islander Sessions by Manu ${number}.mp3`
@@ -338,7 +338,7 @@ const formatTime = (seconds: number) => {
         </span>
 
         <span className="text-[9px] tracking-[0.2em] text-neutral-400">
-          268 — 276
+          269 — 278
         </span>
       </div>
 
