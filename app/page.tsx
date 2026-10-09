@@ -5,7 +5,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { AudioPlayer } from "@/lib/audioPlayer";
-
+import UmanJolyPopup from "@/components/UmanJolyPopup"
 const IMG = {
   hero: "/images/ibiza-hero.jpg",
   about: "/images/ibiza-about.jpg",
@@ -63,6 +63,7 @@ export default function Home() {
 
   return (
     <main className="min-h-screen bg-white text-neutral-900">
+      <UmanJolyPopup />
       {/* HEADER */}
       <header className="absolute left-0 right-0 top-0 z-50 bg-white/90 backdrop-blur-sm">
         <div className="mx-auto flex h-[86px] max-w-[1440px] items-center justify-between px-6 md:px-10">
@@ -104,7 +105,7 @@ export default function Home() {
 
           <nav className="hidden items-center gap-12 text-[11px] tracking-[0.2em] md:flex">
             <Link href="/radio" className="transition-opacity hover:opacity-50">RADIO SHOWS</Link>
-            <Link href="/" className="transition-opacity hover:opacity-50"></Link>
+            <Link href="/shop" className="transition-opacity hover:opacity-50">SHOP</Link>
             <Link href="/dj" className="transition-opacity hover:opacity-50">DJ SPACE</Link>
           </nav>
 
@@ -288,18 +289,17 @@ export default function Home() {
               <p className="text-2xl font-light tracking-[0.2em]">SHOP</p>
               <div className="my-5 h-px w-8 bg-neutral-900" />
               <p className="text-[10px] leading-6 tracking-[0.12em] text-neutral-600">
-                CLOTHING, CAPS, FRAGRANCES
+                VINE. VI. VENCÍ. COLLECTION
+                <br />CLOTHING AND FRAGRANCES
 
-                <br />
-                AND ACCESSORIES
                 <br />
                 INSPIRED BY IBIZA.
               </p>
               <Link
-                href="#"
+                href="/shop"
                 className="mt-7 inline-flex w-fit border border-neutral-400 px-5 py-3 text-[9px] tracking-[0.18em]"
               >
-                IN PROGRESS
+                INFO
               </Link>
             </div>
           </div>
@@ -311,7 +311,7 @@ export default function Home() {
               <p className="text-[10px] leading-6 tracking-[0.12em] text-neutral-600">
                 SUBMIT YOUR NEW RELEASE
                 <br />
-                SHARE YOUR SOUND WITH IBIZA ISLANDER
+                PLAYLIST YOUR SOUND ON <br /> IBIZA ISLANDER SESSIONS
                 <br />
                 AND SPREAD THE WORLD
               </p>
