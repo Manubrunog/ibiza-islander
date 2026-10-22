@@ -199,7 +199,7 @@ export default function Home() {
   if (isPlaying) {
     AudioPlayer.pause();
   } else {
-    AudioPlayer.play("/audio/Ibiza Islander Sessions by Manu 278.mp3");
+    AudioPlayer.play("/audio/Ibiza Islander Sessions by Manu 279.mp3");
   }
 }}
                 >
@@ -229,7 +229,7 @@ export default function Home() {
 
                 <div className="min-w-0 flex-1 text-left">
                   <div className="truncate text-[11px] tracking-[0.18em] md:text-xs">
-                    IBIZA ISLANDER SESSIONS by Manu
+                    IBIZA ISLANDER SESSIONS 279 by Manu
                   </div>
                   <div className="mt-1 text-[9px] tracking-[0.2em] opacity-70">
                     NOW PLAYING
