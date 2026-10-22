@@ -338,7 +338,7 @@ const formatTime = (seconds: number) => {
         </span>
 
         <span className="text-[9px] tracking-[0.2em] text-neutral-400">
-          269 — 278
+          270 — 278
         </span>
       </div>
 
